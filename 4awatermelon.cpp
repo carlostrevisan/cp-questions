@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 
+//EAE GITHUB
 int main()
 {
 	int height;
@@ -13,8 +14,8 @@ int main()
 		return 0;
 	}
 	if (height % 2 == 0){
-		cout << "YES";
+		cout << "YES" << endl;
 	} else {
-		cout << "NO";
+		cout << "NO" << endl;
 	}
 }
