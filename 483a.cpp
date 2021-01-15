@@ -1,4 +1,3 @@
-
 // ┌┬┐┬─┐┌─┐┬  ┬┬┌─┐┌─┐┌┐┌ //
 //  │ ├┬┘├┤ └┐┌┘│└─┐├─┤│││ //
 //  ┴ ┴└─└─┘ └┘ ┴└─┘┴ ┴┘└┘ //
@@ -9,10 +8,18 @@ using namespace std;
 #define ll long long
 
 int main() {
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++) {
-
-    }
-    return 0;
+	ll l, r;
+	cin >> l >> r;
+	if (r - l == 1 or r - l == 0) 
+		cout << "-1" << endl;
+	else if (r - l == 2) {
+		if (l % 2 == 1) cout << "-1" << endl;
+		else cout << l << " " << l + 1 
+			<< " " << l + 2 << endl;
+	}
+	else {
+		if (l % 2 == 1) l += 1;
+		cout << l << " " << l + 1 << " " 
+		<< l + 2 << endl;
+	}
 }

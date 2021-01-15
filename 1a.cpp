@@ -1,4 +1,3 @@
-
 // ┌┬┐┬─┐┌─┐┬  ┬┬┌─┐┌─┐┌┐┌ //
 //  │ ├┬┘├┤ └┐┌┘│└─┐├─┤│││ //
 //  ┴ ┴└─└─┘ └┘ ┴└─┘┴ ┴┘└┘ //
@@ -9,10 +8,12 @@ using namespace std;
 #define ll long long
 
 int main() {
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++) {
-
-    }
-    return 0;
+	ll n, m, a;
+	cin >> n >> m >> a;
+	if (n % a != 0) n = (n / a) + 1;
+	else n /= a;
+	if (m % a != 0) m = (m / a) + 1;
+	else m /= a;
+	cout << n * m << endl;
+	return 0;
 }
