@@ -8,16 +8,17 @@ using namespace std;
 #define ll long long
 
 int main() {
-	bool possible = true;
-	int n, x, a, b;
-	cin >> n >> x;
-	while (n--)	{
-		cin >> a >> b;
-		if (x == a or x == b or x == 7 - a or x == 7 - b) {
-			possible = false;
-		}
-		x = 7 - x;
+	char a[20];
+	int n = 0;
+	while (cin >> a[n]) {
+		n++;
 	}
-	cout << (possible ? "YES" : "NO") << endl;
+	for (int i = 0; i < n; i++) {
+		if (i == 0 and 9 - (a[i] - 48) == 0) {
+			cout << a[i];
+		} else if (a[i] - 48 >= 5) {
+			cout << 9 - (a[i] - 48);
+		} else cout << a[i];
+	}
 	return 0;
 }
