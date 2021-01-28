@@ -1,3 +1,4 @@
+
 // ┌┬┐┬─┐┌─┐┬  ┬┬┌─┐┌─┐┌┐┌ //
 //  │ ├┬┘├┤ └┐┌┘│└─┐├─┤│││ //
 //  ┴ ┴└─└─┘ └┘ ┴└─┘┴ ┴┘└┘ //
@@ -8,22 +9,25 @@ using namespace std;
 #define ll long long
 
 int main() {
-	int n;
-	ll ans, davez = 0;
-	cin >> n;
-	int a[n];
-	for (int i = 0; i < n; i++) {
-		cin >> a[i];
-		if (i == 0)
-			ans = a[0];
-		else {
-			davez = davez + (a[i - 1] - a[i]);
-			if (davez < 0) {
-				davez *= -1;
-				ans += davez;
-				davez = 0;
+	string s;
+	ll c = 0, d = 0;
+	cin >> s;
+	if (s.size() < 2) {
+		cout << 0 << endl;
+		return 0;
+	} else {
+		while (true) {
+			for (int i = 0; i < s.size(); i++) {
+				c += s[i] - '0';
 			}
+			d++;
+			if (c < 10) {
+				cout << d << endl;
+				return 0;
+			}
+			s = to_string(c);
+			c = 0;
 		}
 	}
-	cout << ans << endl;
+	return 0;
 }

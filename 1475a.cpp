@@ -8,22 +8,26 @@ using namespace std;
 #define ll long long
 
 int main() {
-	int n;
-	ll ans, davez = 0;
-	cin >> n;
-	int a[n];
-	for (int i = 0; i < n; i++) {
-		cin >> a[i];
-		if (i == 0)
-			ans = a[0];
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		long long int n, result = 0;
+		cin >> n;
+		if (n % 2 == 1)	{
+			result = 1;
+		}
 		else {
-			davez = davez + (a[i - 1] - a[i]);
-			if (davez < 0) {
-				davez *= -1;
-				ans += davez;
-				davez = 0;
+			while (n > 2) {
+				n = n / 2;
+				if (n % 2 == 1) {
+					result = 1;
+					break;
+				}
 			}
 		}
+		if (result == 1) cout << "YES" << endl;
+		else cout << "NO" << endl;
 	}
-	cout << ans << endl;
+	return 0;
 }

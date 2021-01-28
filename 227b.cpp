@@ -8,22 +8,24 @@ using namespace std;
 #define ll long long
 
 int main() {
+	ios_base ::sync_with_stdio(false);
+	cin.tie(NULL);
 	int n;
-	ll ans, davez = 0;
 	cin >> n;
-	int a[n];
+	int arr[10005];
 	for (int i = 0; i < n; i++) {
-		cin >> a[i];
-		if (i == 0)
-			ans = a[0];
-		else {
-			davez = davez + (a[i - 1] - a[i]);
-			if (davez < 0) {
-				davez *= -1;
-				ans += davez;
-				davez = 0;
-			}
-		}
+		int x;
+		cin >> x;
+		arr[x] = i;
 	}
-	cout << ans << endl;
+	int vasya = 0, petya = 0, q;
+	cin >> q;
+	while (q--) {
+		ll x;
+		cin >> x;
+		vasya += arr[x] + 1;
+		petya += n - arr[x];
+	}
+	cout << vasya << " " << petya << endl;
+	return 0;
 }
